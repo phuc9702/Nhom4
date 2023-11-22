@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/semantic.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ui massive menu">
+        <div class="ui container">
+          <div class="header item">
+            <a href="/">HOME</a>
+          </div>
+          <a class="item"> Blog </a>
+          <a class="item"> Contact </a>
+          <a class="item"> About </a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="ui container">
+        <form action="/add" class="ui form" method="POST">
+          <div class="ui three fields">
+            <div class="field">
+              <label for="maGiay" class="ui header red">Mã Giày</label>
+              <input type="text" name="maGiay" />
+            </div>
+            <div class="field">
+              <label for="tenGiay" class="ui header red">Tên Giày</label>
+              <input type="text" name="tenGiay" />
+            </div>
+            <div class="field">
+              <label for="hangSX" class="ui header red">Hãng Sản Xuất</label>
+              <input type="text" name="hangSX" />
+            </div>
+            <div class="field">
+              <label for="kieuGiay" class="ui header red">Kiểu Giày</label>
+              <input type="text" name="kieuGiay" />
+            </div>
+            <div class="field">
+              <label for="soLuong" class="ui header red">Số Lượng</label>
+              <input type="text" name="soLuong" />
+            </div>
+            <div class="field">
+              <label for="gia" class="ui header red">Giá (triệu đồng)</label>
+              <input type="text" name="gia" />
+            </div>
+          </div>
+          <div class="ui fluid filed">
+            <input
+              type="submit"
+              value="Submit"
+              class="ui button inverted red fluid"
+            />
+          </div>
+        </form>
+        <br /><br />
+
+        <table class="ui red table">
+          <thead>
+            <tr>
+              <th>MaGiay</th>
+              <th>TenGiay</th>
+              <th>HangSanXuat</th>
+              <th>KieuGiay</th>
+              <th>SoLuong</th>
+              <th>Gia</th>
+              <th>Sửa</th>
+              <th>Xoá</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% Shoes.forEach((Shoe)=>{ %>
+            <tr>
+              <td><%- Shoe.maGiay %></td>
+              <td><%- Shoe.tenGiay %></td>
+              <td><%- Shoe.hangSX %></td>
+              <td><%- Shoe.kieuGiay %></td>
+              <td><%- Shoe.soLuong %></td>
+              <td><%- Shoe.gia %></td>
+              <td><a class="ui purple button" href="/edit/<%= Shoe._id%>"><i class="edit outline icon"></i></a></td>
+              <td>
+                <a class="ui red button"href="/delete/<%= Shoe._id%>"><i class="minus icon"></i></a>
+              </td>
+            </tr>
+
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="/js/semantic.main.js">
+      s
+    </script>
+  </body>
+</html>
