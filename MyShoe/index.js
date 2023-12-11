@@ -54,6 +54,7 @@ app.post("/signup", async (req, res) => {
 
       const userdata = await collection.insertMany(data);
       console.log(userdata);
+      res.redirect("/login")
   }
 
 });
@@ -79,6 +80,3 @@ app.post("/login", async (req, res) => {
 });
 
 app.listen(post, () => console.log(`Example app listening on post ${post}!`));
-
-
-
