@@ -6,7 +6,7 @@ const Shoe = require('../models/Shoe');
 // router.get('/',(req, res, next) => {
 //     res.send('Express router is working')
 // })
-router.get("/home", (req, res, next) => {
+router.get("/", (req, res, next) => {
   Shoe.find()
     .then(docs => {
       res.render("home", { Shoes: docs });
