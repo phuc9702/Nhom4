@@ -7,9 +7,10 @@ const bcrypt = require('bcrypt');
 const app = express();
 const Shoe = require('./models/Shoe');
 
+
 const post = 3000;
 
-mongoose.connect("mongodb://127.0.0.1:27017/shoe");
+mongoose.connect("mongodb://127.0.0.1:27017/Shoe");
 const db = mongoose.connection;
 db.on("error", () => {
   console.log("Đã có lỗi xảy ra khi kết nối đến cơ sở dữ liệu");
@@ -31,6 +32,20 @@ app.get("/login", (req, res) => {
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
+
+app.get('/shoes', (req, res) => {
+  // Lấy dữ liệu từ MongoDB và hiển thị trang EJS
+  Shoe.find({}).exec()
+    .then(shoes => {
+      res.render('shoes', { Shoes: shoes });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send('Có lỗi xảy ra khi truy vấn cơ sở dữ liệu.');
+    });
+});
+
+
 
 //dang kí 
 app.post("/signup", async (req, res) => {

@@ -25,9 +25,10 @@ router.post("/add",async (req, res, next) => {
   const kieuGiay    = req.body.kieuGiay;
   const soLuong     = req.body.soLuong;
   const gia         = req.body.gia;
+  const img         = req.body.img;
 
 
-  console.log(maGiay, tenGiay, hangSX,kieuGiay, soLuong, gia);
+  console.log(maGiay, tenGiay, hangSX,kieuGiay, soLuong, gia, img);
   try {
     const newShoe = new Shoe({
       maGiay,
@@ -36,6 +37,7 @@ router.post("/add",async (req, res, next) => {
       kieuGiay,
       soLuong,
       gia,
+      img
     });
 
 
