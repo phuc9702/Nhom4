@@ -13,13 +13,13 @@
       <div class="ui massive menu">
         <div class="ui container">
           <div class="header item">
-            <a href="/home">HOME</a>
-          </div>
-          <div class="header item">
-            <a href="/login"> LOGOUT </a>
+            <a href="/shoes">HOME</a>
           </div>
           <a class="item"> Contact </a>
           <a class="item"> About </a>
+          <div class="header item">
+            <a href="/login"> Logout </a>
+          </div>
         </div>
       </div>
       <br />
@@ -52,6 +52,10 @@
               <label for="gia" class="ui header red">Giá (triệu đồng)</label>
               <input type="text" name="gia" />
             </div>
+            <div class="field">
+              <label for="img" class="ui header red">Url</label>
+              <input type="text" name="img" />
+            </div>
           </div>
           <div class="ui fluid filed">
             <input
@@ -66,6 +70,7 @@
         <table class="ui red table">
           <thead>
             <tr>
+              <th></th>
               <th>MaGiay</th>
               <th>TenGiay</th>
               <th>HangSanXuat</th>
@@ -79,6 +84,7 @@
           <tbody>
             <% Shoes.forEach((Shoe)=>{ %>
             <tr>
+              <td><img  height="50px" width="50px" src="<%- Shoe.img %>" alt=""></td>
               <td><%- Shoe.maGiay %></td>
               <td><%- Shoe.tenGiay %></td>
               <td><%- Shoe.hangSX %></td>

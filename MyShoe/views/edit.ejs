@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MY SHOE STORE</title>
     <link rel="stylesheet" href="/css/semantic.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
@@ -13,9 +13,11 @@
       <div class="ui massive menu">
         <div class="ui container">
           <div class="header item">
-            <a href="/home">HOME</a>
+            <a href="/">HOME</a>
           </div>
-          <a class="item"> Blog </a>
+          <div class="header item">
+            <a href="/login"> LOGIN </a>
+          </div>
           <a class="item"> Contact </a>
           <a class="item"> About </a>
         </div>
@@ -49,6 +51,10 @@
             <div class="field">
               <label for="gia" class="ui header red">Giá (VND)</label>
               <input value="<%- Shoe.gia %>" id="gia" name="gia" />
+            </div>
+            <div class="field">
+              <label for="img" class="ui header red">Url</label>
+              <input value="<%- Shoe.img %>" id="img" name="img" />
             </div>
           </div>
           <div class="ui fluid filed">

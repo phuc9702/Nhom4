@@ -26,7 +26,13 @@ const ShoeSchema = new Schema({
         type: Number,
         required: true,
         min: 0,
+    },
+    img: {
+        type: String,
+        required: true,
+    
     }
+
 })
 
 module.exports = mongoose.model('Shoes',ShoeSchema)
